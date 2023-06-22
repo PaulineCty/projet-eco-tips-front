@@ -44,7 +44,7 @@ const collectionMiddelware = (store) => (next) => (action) => {
       const { formValues } = action;
       store.dispatch(loadApiRequest());
       axios
-        .post(`${apiUrl}/me/proposal`, formValues, {
+        .post(`${apiUrl}/me/card`, formValues, {
           headers: { Authorization: `Bearer ${store.getState().user.token}` },
         })
         .then((res) => {

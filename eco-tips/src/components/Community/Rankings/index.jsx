@@ -30,7 +30,7 @@ function Rankings() {
   // fetch rankings on components loading
   useEffect(() => {
     axios
-      .get(`${apiUrl}/ranking/score`, {
+      .get(`${apiUrl}/user/score`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -43,7 +43,7 @@ function Rankings() {
 
   useEffect(() => {
     axios
-      .get(`${apiUrl}/ranking/creation`, {
+      .get(`${apiUrl}/user/creation`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

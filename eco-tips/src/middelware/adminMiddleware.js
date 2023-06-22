@@ -22,7 +22,7 @@ const adminMiddleware = (store) => (next) => (action) => {
     case GET_ALL_PROPOSALS:
       store.dispatch(loadApiRequest());
       axios
-        .get(`${apiUrl}/proposal`, {
+        .get(`${apiUrl}/card/proposal`, {
           headers: { Authorization: `Bearer ${store.getState().user.token}` },
         })
         .then((res) => {
@@ -35,7 +35,7 @@ const adminMiddleware = (store) => (next) => (action) => {
       const { cardId } = action;
       store.dispatch(loadApiRequest());
       axios
-        .patch(`${apiUrl}/proposal/${cardId}`, {}, {
+        .patch(`${apiUrl}/card/proposal/${cardId}`, {}, {
           headers: { Authorization: `Bearer ${store.getState().user.token}` },
         })
         .then((res) => {
