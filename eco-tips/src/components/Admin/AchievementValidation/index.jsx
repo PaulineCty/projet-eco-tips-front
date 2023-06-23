@@ -45,7 +45,7 @@ function AchievementValidation() {
       <div className="bg-white p-8 rounded-md shadow-md mx-auto lg:w-[80%] sm:w-[90%]">
         <SuccessNotifications />
         <div className="shadow-md">
-          <h2 className="text-lg mb-6 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-400 from-emerald-600 border-b-4 border-green-500 rounded-t-lg">
+          <h2 className="text-lg mb-6 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-700 border-b-4 border-green-600 rounded-t-lg">
             <span className="inset-text-shadow">Gérer les accomplissements des utilisateurs avant publication</span>
           </h2>
         </div>

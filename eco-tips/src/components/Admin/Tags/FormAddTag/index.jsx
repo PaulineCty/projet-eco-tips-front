@@ -3,11 +3,11 @@ import ButtonsAdd from '@/components/Admin/Tags/ButtonsAdd';
 
 function FormAddTag() {
   const [textValue, setTextValue] = useState('catégorie');
-  const [currentColor, setCurrentColor] = useState('#e2e8f0');
+  const [currentColor, setCurrentColor] = useState('#542F98');
 
   const onReset = () => {
     setTextValue('catégorie');
-    setCurrentColor('#e2e8f0');
+    setCurrentColor('#542F98');
   };
 
   return (
