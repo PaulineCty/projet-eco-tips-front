@@ -4,43 +4,35 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 // Action creator
-import { getAllCollection } from '@/actions/collection';
+import { getAllUsers } from '../../../actions/admin';
 import { askRefresh } from '@/actions/ui';
-// Card components
-import Card from '@/components/Card';
-import IconsAdd from '@/components/Collection/IconsAdd';
-import DisplayRemainingTime from '@/components/Collection/RemainingTime';
+// User components
+import User from './User';
 // Tools components
 import SuccessNotifications from '@/components/SuccessNotifications';
 import ErrorNotifications from '@/components/ErrorNotifications';
 import Spinner from '@/components/Spinner';
-// utils fonction to filtered cards and handle option on select input
-import { filterChecked, filterToValidate, cardsAccordingToExpiration } from '@/utils/collection';
+
+
 
 function UserRole() {
   // Store
-  const { collection } = useSelector((state) => state.collection);
   const { refresh } = useSelector((state) => state.ui);
+  const { users } = useSelector((state) => state.admin);
   // Local State
   const [loading, setLoading] = useState(true);
-  const [selectedFilter, setSelectedFilter] = useState('all');
   // Hooks
   const dispatch = useDispatch();
   const location = useLocation();
-  // Filtered cards
-  const cardsChecked = filterChecked(collection);
-  const cardsToValidate = filterToValidate(collection);
-  const cardsNearestToExpiration = cardsAccordingToExpiration(collection, true);
-  // const cardsfarthestToExpiration = cardsAccordingToExpiration(collection, false);
-  // Fetch all collection lodaing component
+  // Fetch all collection loading component
   useEffect(() => {
-    dispatch(getAllCollection());
+    dispatch(getAllUsers());
     setLoading(false);
   }, []);
-  // component and component refresh when board state changes
+  // refresh component after change datas
   useEffect(() => {
     if (refresh) {
-      dispatch(getAllCollection());
+      dispatch(getAllUsers());
       dispatch(askRefresh());
       window.scroll(0, 0);
     }
@@ -57,9 +49,15 @@ function UserRole() {
       <div className="mx-auto lg:w-[80%] sm:w-[90%] bg-white p-8 rounded-md shadow-md">
         <SuccessNotifications />
         <ErrorNotifications />
-        {loading ? (
-          <Spinner />
-        ) : (<span> Yiha </span>)
+        {
+          loading ? 
+            (
+              <Spinner />
+            )  
+          : 
+            (
+              users.map(user => <User {...user} key={user.id}/>)
+            )
         }
         </div>
     </>
