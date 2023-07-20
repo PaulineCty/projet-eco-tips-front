@@ -35,6 +35,12 @@ function Admin() {
           </Link>
 
         </div>
+        <div className=" m-6 place-self-center   ">
+          <Link to="/admin/user" className="py-2 px-2 font-bold blue-button blue-button:hover button-active active:animate-buttonAnimation  ">
+            Gérer les rôles des utilisateurs
+          </Link>
+
+        </div>
       </div>
     </>
   );

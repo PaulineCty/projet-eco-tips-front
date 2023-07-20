@@ -8,13 +8,15 @@ import { GET_ALL_PROPOSALS,
   ADD_ACHIEVEMENT,
   DELETE_ACHIEVEMENT,
   UPDATE_ACHIEVEMENT,
+  ADD_TAG,
   DELETE_TAG,
   UPDATE_TAG,
+  GET_ALL_USERS,
   saveAllProposals,
+  saveAllUsers,
   sendAllAchievements } from '@/actions/admin';
 import { loadApiRequest, loadTRequestError, loadRequestSuccess } from '@/actions/apiMessages';
 import { askRefresh } from '@/actions/ui';
-import { ADD_TAG } from '../actions/admin';
 
 const adminMiddleware = (store) => (next) => (action) => {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -22,7 +24,7 @@ const adminMiddleware = (store) => (next) => (action) => {
     case GET_ALL_PROPOSALS:
       store.dispatch(loadApiRequest());
       axios
-        .get(`${apiUrl}/proposal`, {
+        .get(`${apiUrl}/card/proposal`, {
           headers: { Authorization: `Bearer ${store.getState().user.token}` },
         })
         .then((res) => {
@@ -35,7 +37,7 @@ const adminMiddleware = (store) => (next) => (action) => {
       const { cardId } = action;
       store.dispatch(loadApiRequest());
       axios
-        .patch(`${apiUrl}/proposal/${cardId}`, {}, {
+        .patch(`${apiUrl}/card/proposal/${cardId}`, {}, {
           headers: { Authorization: `Bearer ${store.getState().user.token}` },
         })
         .then((res) => {
@@ -177,6 +179,18 @@ const adminMiddleware = (store) => (next) => (action) => {
         .finally(() => {
           store.dispatch(askRefresh());
         }); }
+      break;
+    case GET_ALL_USERS:
+      store.dispatch(loadApiRequest());
+      axios
+        .get(`${apiUrl}/user`, {
+          headers: { Authorization: `Bearer ${store.getState().user.token}` },
+        })
+        .then((res) => {
+          store.dispatch(saveAllUsers(res.data));
+        })
+        .catch((err) => store.dispatch(loadTRequestError(err.response.data, err.response.status)))
+        .finally();
       break;
     default:
   }
