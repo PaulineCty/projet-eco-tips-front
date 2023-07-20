@@ -19,9 +19,9 @@ function HomeAchievement() {
 
   return (
     <div className="bg-white h-min shadow-md lg:w-1/3">
-      <h1 className=" text-lg p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-800 border-b-4 border-green-600 rounded-t-lg">
+      <h2 className=" text-lg p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-800 border-b-4 border-green-600 rounded-t-lg">
         <span className="inset-text-shadow pl-0.5">Accomplissement d'un utilisateur</span>
-      </h1>
+      </h2>
       <div className="p-4">
         {Object.keys(randomAchievement).length > 0 ? (
           <Achievement {...randomAchievement} />

@@ -61,7 +61,7 @@ function Header() {
         {/* logo */}
         <NavLink to="/">
           <div className="flex flex-row items-center">
-            <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-green-600 from-green-900 pb-1">eco-tips</h1>
+            <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-green-600 from-green-900 pb-1">eco-tips</span>
           </div>
         </NavLink>
         {logged && (

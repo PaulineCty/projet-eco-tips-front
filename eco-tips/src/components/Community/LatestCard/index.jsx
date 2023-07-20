@@ -15,10 +15,10 @@ function LatestCard() {
   }, []);
 
   return (
-    <div className="flex-col sm:1/2 lg:w-1/4 md:1/4">
-      <h1 className="text-lg mb-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-800 border-b-4 border-green-600 rounded-t-lg">
+    <div className="flex-col sm:w-1/2 lg:w-1/4 md:w-1/4">
+      <h2 className="text-lg mb-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-800 border-b-4 border-green-600 rounded-t-lg">
         <span className="inset-text-shadow pl-0.5">Dernière carte ajoutée</span>
-      </h1>
+      </h2>
       <div>
         <div className="w-full">
           {Object.keys(latestCard).length > 0 ? (
@@ -27,9 +27,9 @@ function LatestCard() {
             <Spinner />
           )}
         </div>
+        
       </div>
     </div>
   );
 }
-
 export default LatestCard;
