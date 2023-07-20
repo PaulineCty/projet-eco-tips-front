@@ -37,7 +37,7 @@ function ProposalValidation() {
         <h1 className="text-2xl font-bold mb-6 text-center">Espace administrateur</h1>
       </div>
       <div className="mx-auto sm:w-[90%] lg:w-[80%] bg-white p-8 rounded-md shadow-md">
-        <h2 className="text-lg my-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-400 from-emerald-600 border-b-4 border-green-500 rounded-t-lg">
+        <h2 className="text-lg my-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-700 border-b-4 border-green-600 rounded-t-lg">
           <span className="inset-text-shadow">Gérer les propositions des nouvelles cartes</span>
         </h2>
         <SuccessNotifications />

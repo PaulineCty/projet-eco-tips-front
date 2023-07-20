@@ -73,8 +73,8 @@ function MyCreations() {
             <div className="flex flex-col">
               {(selectedFilter === 'beingValidated' || selectedFilter === 'all') && (
               <>
-                <h2 className="text-lg mb-2 mt-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-400 from-emerald-600 border-b-4 border-green-500 rounded-t-lg">
-                  <span className="inset-text-shadow">Cartes en cours de validation</span>
+                <h2 className="text-lg mb-2 mt-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-700 border-b-4 border-green-600 rounded-t-lg">
+                  <span className="inset-text-shadow pl-0.5">Cartes en cours de validation</span>
                 </h2>
                 <div className="flex flex-wrap gap-3 my-2">
                   {cardsInProposals.length > 0 ? (cardsInProposals.map((card) => (
@@ -87,8 +87,8 @@ function MyCreations() {
               )}
               {(selectedFilter === 'validated' || selectedFilter === 'all') && (
               <>
-                <h2 className="text-lg mb-2 mt-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-400 from-emerald-600 border-b-4 border-green-500 rounded-t-lg">
-                  <span className="inset-text-shadow">Cartes validées</span>
+                <h2 className="text-lg mb-2 mt-4 p-2 shadow-md text-white font-extrabold bg-gradient-to-r to-green-600 from-green-700 border-b-4 border-green-600 rounded-t-lg">
+                  <span className="inset-text-shadow pl-0.5">Cartes validées</span>
                 </h2>
                 <div className="flex flex-wrap gap-3 my-2">
                   {cardsNotInProposals.length > 0 ? (cardsNotInProposals.map((card) => (

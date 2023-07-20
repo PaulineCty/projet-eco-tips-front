@@ -17,9 +17,9 @@ function Achievement({ title, description, image, author, children }) {
           }}
           className="absolute w-full h-full"
         />
-        <h2 className="flex items-center bg-gradient-to-r to-green-400 from-green-500 rounded-t-lg shadow-md p-1 z-10">
-          <span className="text-xl inset-text-shadow">🏆</span>
-          <span className="inset-text-shadow oswald text-l text-white">{`${title}`}</span>
+        <h2 className="flex items-center bg-gradient-to-r to-green-600 from-green-800 rounded-t-lg shadow-md p-1 z-10">
+          <span className="text-xl inset-text-shadow m-2">🏆</span>
+          <span className="inset-text-shadow text-sm text-white">{`${title}`}</span>
         </h2>
         <div className="flex gap-2 z-10 relative p-2">
           <img
@@ -30,7 +30,7 @@ function Achievement({ title, description, image, author, children }) {
           <div className="p-2 w-2/3 flex flex-col text-sm bg-white rounded-lg shadow-md opacity-90">
             <div className="flex gap-1">
               <span>📝</span>
-              <h3 className="mb-2 text-md font-bold underline decoration-2 decoration-green-400 text-gray-900">Retour d'expérience :</h3>
+              <h3 className="mb-2 text-md font-bold underline decoration-2 decoration-green-500 text-gray-900">Retour d'expérience :</h3>
             </div>
             <div>{`${description}`}</div>
             <div className="mt-auto text-gray-500 text-xs">

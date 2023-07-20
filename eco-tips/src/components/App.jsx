@@ -16,6 +16,7 @@ import Admin from '@/components/Admin';
 import Community from '@/components/Community';
 import Home from '@/components/Home';
 import AchievementValidation from '@/components/Admin/AchievementValidation';
+import UserRole from '@/components/Admin/UserRole';
 import Tags from '@/components/Admin/Tags';
 import BilanAdeme from '@/components/Home/BilanAdeme';
 import MyCreations from '@/components/MyCreations';
@@ -85,6 +86,7 @@ function App() {
             {logged && roleId === 1 && <Route path="/admin/proposals/:slug" element={<FormValidation />} />}
             {logged && roleId === 1 && <Route path="/achievement/proposal/:slug" element={<AchievementFormValidation />} />}
             {logged && roleId === 1 && <Route path="/admin/achievements" element={<AchievementValidation />} />}
+            {logged && roleId === 1 && <Route path="/admin/user" element={<UserRole />} />}
             {logged && roleId === 1 && <Route path="/admin" element={<Admin />} />}
             <Route path="/500" element={errorStatus === 500 && <ServerErrorPage />} />
             <Route path="/" element={<Home />} />
